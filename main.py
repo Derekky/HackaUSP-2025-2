@@ -163,6 +163,8 @@ if __name__ == "__main__":
     
     # Prompt for device selection (optional)
     print("Press Enter to use default devices, or specify device indices:")
+    print("Default Input: CABLE Output (VB-Audio Virtual")
+    print("Default Output: Headphones (Realtek(R) Audio)")
     
     input_choice = input("Input device index (or press Enter for default): ").strip()
     output_choice = input("Output device index (or press Enter for default): ").strip()

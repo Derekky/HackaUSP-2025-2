@@ -541,7 +541,8 @@ class AudioFilterGUI:
     
     def on_closing(self):
         """Handle window close event"""
-        self.processor.close()
+        if(self.processor.running): 
+            self.processor.close()
         self.root.destroy()
     
     def run(self):

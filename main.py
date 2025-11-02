@@ -11,8 +11,10 @@ class AudioFilter:
         self.running = False
         
         # Design bandpass filter (250Hz to 2kHz)
-        self.lowcut = 250.0
-        self.highcut = 2000.0
+        # We'll put a little bit of an offset so the annoying frequencies are less proeminent
+        offset = 500.0
+        self.lowcut = 200.0 + offset
+        self.highcut = 1800.0 - offset
         self.nyquist = 0.5 * self.sample_rate
         
         # Create Butterworth bandpass filter with lower order for less latency

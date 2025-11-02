@@ -391,8 +391,19 @@ class AudioFilterGUI:
             self.input_dropdown.configure(values=input_names)
             self.output_dropdown.configure(values=output_names)
             
-            if input_names:
+            # Auto-select CABLE Output for input if available
+            cable_found = False
+            for device_str in input_names:
+                if "CABLE Output" in device_str:
+                    self.input_dropdown.set(device_str)
+                    cable_found = True
+                    self.add_log(f"✓ CABLE Output detectado automaticamente")
+                    break
+            
+            if not cable_found and input_names:
                 self.input_dropdown.set(input_names[0])
+            
+            # Auto-select default output (first available)
             if output_names:
                 self.output_dropdown.set(output_names[0])
             

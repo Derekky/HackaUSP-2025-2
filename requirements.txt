@@ -1,3 +1,4 @@
 pyaudio
 numpy
 scipy
+customtkinter

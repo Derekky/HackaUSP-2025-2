@@ -128,20 +128,10 @@ class AudioProcessor:
             self.stream_in = None
         
 
-        # if self.stream_out:
-        #     print("You was conflicted")
-        #     self.stream_out.stop_stream()
-        #     self.stream_out.close()
-        #     self.stream_out = None
-
     
     def close(self):
-        """Clean up PyAudio"""
-        print("bbbbbbbbbbbb")
         self.stop()
-        print("Misusing your influence")
-        #self.p.terminate()
-        print("AAAAAAAAAAAAAAAAAAAAA")
+
 
 
 class AudioFilterGUI:
